@@ -1,6 +1,6 @@
 module practice_1
 
-go 1.19
+go 1.12
 
 require (
 	github.com/go-mgo/mgo v0.0.0-20180705113738-7446a0344b78

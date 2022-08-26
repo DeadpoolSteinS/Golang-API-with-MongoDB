@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 	"practice_1/controllers"
 	"practice_1/initializers"
 
@@ -14,10 +15,11 @@ func init() {
 }
 
 func main() {
+	port := os.Getenv("PORT")
 	r := httprouter.New()
 
 	r.GET("/user", controllers.GetUser)
 	r.POST("/user", controllers.CreateUser)
 
-	http.ListenAndServe("localhost:3000", r)
+	http.ListenAndServe(":"+port, r)
 }
